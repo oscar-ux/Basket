@@ -1,0 +1,51 @@
+<!doctype html>
+<!-- Based on paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6 ie ltie9 ltie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 ie ltie9 ltie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 ie ltie9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie no-js" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<script type="text/javascript">(function(b){b.className=b.className.replace(/\bno-js\b/,'js');})(document.documentElement);</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Oscar Flores">
+	<meta name="description" content="Test for Netcentric"/>
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--link rel="shortcut icon" href="Icon should be added"-->
+	<title>Basket</title>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700%7CDroid+Sans:700' rel='stylesheet' type='text/css'/>
+	<link href="css/basket.css" rel="stylesheet" /> 
+	<script src="js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+	<div id="main">
+		<div id="header"><div id="logo"></div></div>
+		<div id="content">
+			<h1>Your Basket</h1>
+			<p>
+				Items you have added to your basket are shown below.<br/>
+				Adjust the quantities or remove items before continuing your purchase.
+			</p>
+			<div id='bskt'><span class="alert">Please activate Javascript to see your items.</span></div>
+		</div>
+	</div>
+	<div id="footer"><div id="subFoot">&copy; Netcentric - Enterprise Web Excellence</div></div>
+	<script type="text/javascript" src="js/basket.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var myBasket = new Basket({
+					container : 'bskt', 
+					headers : ['Products', 'Price', 'Qty', 'Cost'],
+					data : 'localDataBuy',
+					currency : '£',
+					percentage : 20,
+					trash : true,
+					calculate : true,
+					button : 'Buy Now &raquo;'
+				});
+		});
+	</script>
+</body>
+</html>
